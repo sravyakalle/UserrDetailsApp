@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Add new User</h1>
+    <div class="row">
+      <div class="col-6">
+        <form ngNativeValidate #form="ngForm" (ngSubmit)="addUser()">
+
+          <div class="mb-3">
+            <span [style.color]="'red'">*</span>
+            <label for="username" class="form-label">User Name</label>
+            <input type="require" class="form-control" id="userName" name="username" [(ngModel)]="newUser.userName" required />
+          </div>
+          <div class="mb-3">
+            <span [style.color]="'red'">*</span>
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="require" class="form-control" id="firstName" name="firstname" [(ngModel)]="newUser.firstName" required />
+          </div>
+          <div class="mb-3">
+            <span [style.color]="'red'">*</span>
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="require" class="form-control" id="lastName" name="lastname" [(ngModel)]="newUser.lastName" required />
+          </div>
+
+          <div class="mb-3">
+            <span [style.color]="'red'">*</span>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="newUser.email" required />
+          </div>
+          
+          <div class="mb-3">
+              <span [style.color]="'red'">*</span>
+              <label for="status" class="form-label">Status</label>
+              <input type="require" class="form-control" id="status" name="status"  readonly [(ngModel)]="newUser.status" required />
+              <input type="radio" [(ngModel)]="newUser.status"  name="status" value="Active">Active<br>
+              <input type="radio" [(ngModel)]="newUser.status"  name="status" value="InActive">InActive<br>
+              <input type="radio" [(ngModel)]="newUser.status"  name="status" value="Terminated">Terminated<br>
+              <!-- <div>Selected Radio: {{updateUserRequest.status}}</div> -->
+          </div>
+          <div class="mb-3">
+            <span [style.color]="'red'">*</span>
+            <label for="department" class="form-label">Department</label>
+            <input type="require" class="form-control" id="department" name="department" [(ngModel)]="newUser.department" required/>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>

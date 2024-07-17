@@ -1,0 +1,72 @@
+
+<div class="container">
+    <h1> Edit User Details</h1>
+    <div class="row">
+      <div class="col-6">
+        <form ngNativeValidate #form="ngForm" (ngSubmit)="updateUser()">
+          <div class="mb-3">
+            <!-- <label for="id" class="form-label">ID</label> -->
+            <input type="hidden" class="form-control" id="id" name="id" [(ngModel)]="updateUserRequest.id" />
+          </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" class="form-control bg-light" id="username" name="username" readonly [(ngModel)]="updateUserRequest.userName" />
+              </div>
+            <div class="mb-3">
+              <span [style.color]="'red'">*</span>
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="require" class="form-control" id="firstname" name="firstname" [(ngModel)]="updateUserRequest.firstName" required />
+            </div>
+            
+            <div class="mb-3">
+              <span [style.color]="'red'">*</span>
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="require" class="form-control" id="lastName" name="lastname" [(ngModel)]="updateUserRequest.lastName" required/>
+            </div>
+
+            <div class="mb-3">
+              <span [style.color]="'red'">*</span>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="updateUserRequest.email" required/>
+            </div>
+
+              <div class="mb-3">
+                <span [style.color]="'red'">*</span>
+                <label for="status" class="form-label">Status</label>
+                <input type="require" class="form-control" id="status" name="status" readonly [(ngModel)]="updateUserRequest.status" required/>
+                <input type="radio" [(ngModel)]="updateUserRequest.status"  name="status" value="Active">Active<br>
+                <input type="radio" [(ngModel)]="updateUserRequest.status"  name="status" value="InActive">InActive<br>
+                <input type="radio" [(ngModel)]="updateUserRequest.status"  name="status" value="Terminated">Terminated<br>
+              <!-- <div>Selected Radio: {{updateUserRequest.status}}</div> -->
+              </div>
+              <div class="mb-3">
+                <span [style.color]="'red'">*</span>
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" name="department" [(ngModel)]="updateUserRequest.department" required/>
+              </div>
+              <button type="submit"class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+  
+ <!-- <div class="mb-3">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastname" [(ngModel)]="updateUserRequest.lastName" required/>
+            </div> -->
+
+
+            <!-- <div class="form-group" ng-class="{ 'has-error': form.lastname.$dirty && form.lastname.$error.required }">
+              <label for="lastname">lastname</label>
+              <input type="text" name="lastname" id="lastname" class="form-control" [(ngModel)]="updateUserRequest.lastName" required />
+              <span ng-show="form.lastname.$error.required" class="help-block">Name is required</span>
+          </div> -->
+  
+
+          <!-- <div class="mb-3">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="updateUserRequest.lastName" ng-required="updateUserRequest.lastName"/>
+            <p *ng-if="Form.lastname.$valid">The input field cannot be empty</p>
+          </div> -->

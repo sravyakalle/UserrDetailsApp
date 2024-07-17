@@ -1,0 +1,31 @@
+<div class="container">
+    <h4><b>User Details</b></h4>
+    <table class="table" *ngIf="userlists && userlists.length > 0">
+      <thead>
+        <tr>
+          <!-- <th data scope="col">Id#</th> -->
+          <th scope="col">User Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Status</th>
+          <th scope="col">Department</th>          
+        </tr>
+      </thead>  
+      <tbody>
+      <tr *ngFor="let userlist of userlists">
+        <!-- <th>{{ userlist.id }}</th> -->
+        <th>{{ userlist.userName}}</th>
+        <th>{{ userlist.firstName }}</th>
+        <th>{{ userlist.lastName }}</th>
+        <th>{{ userlist.email }}</th>
+        <th>{{ userlist.status }}</th>
+        <th>{{ userlist.department }}</th>
+
+        <th><a [routerLink]="['/users','edit',userlist.id]">Edit</a></th>    
+        <th><a [routerLink]="[]" (click)="deleteUser(userlist.id)">Delete</a></th>   
+      </tr>        
+      </tbody>
+    </table>
+    <p *ngIf="!userlists || userlists.length == 0">No Users Found!</p>
+</div>
